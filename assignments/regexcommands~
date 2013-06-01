@@ -1,0 +1,34 @@
+exact "bbb" match:
+
+ awk '{for(i=1;i<=NF;i++){if ($i ~/(([a b ]+[\s]|^)bbb([\s][a b \e \s]+|$))|(^$)/) {print $i}}}' regex1b.txt
+
+"aaa" match:
+
+awk '{for(i=1;i<=NF;i++){if ($i ~/([a b \e \s]*|^)aaa([a b \e \s]*|$)/) {print $i}}}' regex.txt
+
+s1,s2,s3,s4 match:
+
+awk '{for(i=1;i<=NF;i++){if ($i ~/(([a b \s]*|^)(ab|ba|aab|bba)([a b \e \s]*|$))|(^$)/) {print $i}}}' regex2.txt
+
+exact "bb" or "bbb" match:
+
+awk '{for(i=1;i<=NF;i++){if ($i ~/(([a b ]+[\s]|^)(bbb|bb)([\s][a b \e \s]+|$))|(^$)/) {print $i}}}' regex1b.txt
+
+end with double letter:
+
+awk '{for(i=1;i<=NF;i++){if ($i ~/(([a b ]+|^)(bb|aa)([\s][a b \e \s]+|$))|(^$)/) {print $i}}}' regex1b.txt
+
+set of strings not containing 101 as substring:
+
+ cat regex1b.txt|awk '{for(i=1;i<=NF;i++)if($i !~/(([0 1 \s]*|^)101([0 1 \s]*|$))/) {print $i}}' 
+
+dont print string which ends with "ba":
+
+cat regex1b.txt|awk '{for(i=1;i<=NF;i++)if($i !~/(([a b \s]*|^)ba$)/) {print $i}}'
+
+
+top 5 files according to size:
+
+ls -S -l|head -5
+
+

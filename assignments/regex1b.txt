@@ -1,0 +1,15 @@
+aabbbbb baba bbaa
+001101001111 11100 101 10101
+00001111 11110000 101
+000000000000 111111111111
+aaabbbbb
+bbbaaaa
+ab
+bbb
+aaabbb bb aaa bbb 
+ba
+aabaabbbb
+bbaaaabb
+
+
+
